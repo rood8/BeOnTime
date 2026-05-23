@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>Punctuality Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Punctuality Planner</p>
+      <h1>Be on time.</h1>
+      <p class="sub">Plan events, calculate when to leave, prepare tasks, and set reminders.</p>
+    </section>
+
+    <section class="card">
+      <h2>Add event</h2>
+      <label>Event title<input id="title" placeholder="Dentist appointment" /></label>
+      <label>Destination<input id="destination" placeholder="Port Louis" /></label>
+      <label>Event date and time<input id="eventTime" type="datetime-local" /></label>
+      <div class="grid">
+        <label>Travel minutes<input id="travel" type="number" value="30" min="0" /></label>
+        <label>Buffer minutes<input id="buffer" type="number" value="15" min="0" /></label>
+      </div>
+      <label>Tasks before leaving<textarea id="tasks" placeholder="Take keys&#10;Charge phone&#10;Check traffic"></textarea></label>
+      <button id="saveBtn">Save event</button>
+    </section>
+
+    <section class="card alert-card">
+      <h2>Next event</h2>
+      <div id="nextEvent" class="empty">No event added yet.</div>
+    </section>
+
+    <section class="card">
+      <h2>Upcoming events</h2>
+      <div id="eventList"></div>
+    </section>
+
+    <section class="card">
+      <h2>Permissions</h2>
+      <button id="notifyBtn">Enable notifications</button>
+      <button id="locationBtn" class="secondary">Use my location</button>
+      <p id="permissionStatus" class="small">Notifications and location are optional, but they make the app useful.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
